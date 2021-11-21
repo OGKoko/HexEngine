@@ -348,3 +348,26 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+!Source/SDL/*
+!Source/SDL/include/*
+!Source/SDL/docs/*
+!Source/SDL/lib/*
+!Source/SDL/lib/x86/*
+!Source/SDL/lib/x64/*
+!Source/glew/*
+!Source/glew/doc/*
+!Source/glew/include/*
+!Source/glew/include/GL/*
+!Source/glew/lib/*
+!Source/glew/lib/Release/*
+!Source/glew/lib/Release/Win32/*
+!Source/glew/lib/Release/x64/*
+!Source/DevIL/*
+!Source/DevIL/include/IL/*
+!Source/DevIL/lib/*
+!Source/DevIL/lib/x64/*
+!Source/DevIL/lib/x64/Release/*
+!Source/DevIL/lib/x64/unicode/*
+!Source/DevIL/lib/x86/*
+!Source/DevIL/lib/x86/Release/*
+!Source/DevIL/lib/x86/unicode/*
