@@ -1,6 +1,8 @@
 #pragma once
 #include "Module.h"
 #include "MathGeoLib/Geometry/Frustum.h"
+#include "glew/glew-2.1.0/include/GL/glew.h"
+
 
 class ModuleCamera : public Module
 {

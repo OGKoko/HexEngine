@@ -25,23 +25,17 @@ ModuleEditor::~ModuleEditor()
 // Called before render is available
 bool ModuleEditor::Init()
 {
-	IMGUI_CHECKVERSION();
-	ImGui::CreateContext();
-	
-
-	ImGui_ImplSDL2_InitForOpenGL(App->window->window, App->renderer->context);
-	ImGui_ImplOpenGL3_Init("#version 330");
-
+	//InitializeImGui();
 	return true;
 }
 
 update_status ModuleEditor::PreUpdate()
 {
 	//Begin new ImGui Frame
-	ImGui_ImplOpenGL3_NewFrame();
-	ImGui_ImplSDL2_NewFrame();//App->window->window
-	ImGui::NewFrame();
-	
+	//ImGui_ImplOpenGL3_NewFrame();
+	//ImGui_ImplSDL2_NewFrame();//App->window->window
+	//ImGui::NewFrame();
+
 	return UPDATE_CONTINUE;
 }
 
@@ -52,61 +46,51 @@ update_status ModuleEditor::Update()
 	ImGuiWindowFlags windowFlags = ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_MenuBar;
 	ImGui::Begin("Editor", &widShown, windowFlags);
 	DrawParentMenu();
-	if (isAbtWin) 
+	if (isAbtWin)
 	{
 		DrawAboutMenu();
 	}
 	ImGui::Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-	
-    return UPDATE_CONTINUE;
+
+	return UPDATE_CONTINUE;
 }
 
 void ModuleEditor::DrawParentMenu()
 {
 	if (ImGui::BeginMainMenuBar())
 	{
-		
-		// Begin Drawing Help Menu:
 		if (ImGui::BeginMenu("Help"))
 		{
-
 			if (ImGui::MenuItem("About"))
 			{
-				
 				isAbtWin = true;
 			}
-
-			
 			ImGui::EndMenu();  //fin del bloque help
 		}
-
-		// End Drawing Main Menu Bar:
-		ImGui::EndMainMenuBar();
+				ImGui::EndMainMenuBar();
 	}
 
 	if (ImGui::BeginMenu("Help")) //empieza el nuevo bloque Help
 	{
-
 		if (ImGui::MenuItem("About")) //creacion panel abt
 		{
-			
 			isAbtWin = true;
 		}
-
-		
 		ImGui::EndMenu(); // fin del bloque help
 	}
-
 	// End Drawing Main Menu Bar:
-	ImGui::EndMainMenuBar();
+	//ImGui::EndMainMenuBar();
 	/*bool winShow = true;
 	ImGui::ShowDemoWindow(&winShow);
 	ImGui::Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-	ImGui::End();*/
-//}
+	;*/
+	//}
+	//ImGui::End();
 }
+
+
 
 void ModuleEditor::DrawAboutMenu()
 {
@@ -126,6 +110,23 @@ void ModuleEditor::DrawAboutMenu()
 	ImGui::End();
 }
 
+void ModuleEditor::InitializeImGui()
+{
+
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+
+
+	ImGui_ImplSDL2_InitForOpenGL(App->window->window, App->renderer->context);
+	ImGui_ImplOpenGL3_Init("#version 330");
+
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplSDL2_NewFrame();//App->window->window
+	ImGui::NewFrame();
+
+	//ImGui::End();
+}
+
 
 
 
@@ -136,7 +137,7 @@ bool ModuleEditor::CleanUp()
 {
 	ImGui_ImplOpenGL3_Shutdown();
 	ImGui_ImplSDL2_Shutdown();
-
+	ImGui::End();
 	ImGui::DestroyContext();
 
 	return true;

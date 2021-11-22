@@ -15,6 +15,7 @@ public:
 
 	void DrawParentMenu();
 	void DrawAboutMenu();
+	void InitializeImGui();
 	bool CleanUp();
 private:
 

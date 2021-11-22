@@ -31,6 +31,7 @@ bool ModuleInput::Init()
 // Called every draw update
 update_status ModuleInput::Update()
 {
+
     SDL_Event sdlEvent;
 
     while (SDL_PollEvent(&sdlEvent) != 0)

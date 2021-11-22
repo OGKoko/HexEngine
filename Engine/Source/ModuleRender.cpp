@@ -7,7 +7,7 @@
 #include "SDL.h"
 #include "glew/glew-2.1.0/include/GL/glew.h"
 
-
+	
 ModuleRender::ModuleRender()
 {
 }
@@ -55,7 +55,7 @@ bool ModuleRender::Init()
 update_status ModuleRender::PreUpdate()
 {
 	glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+	glClearColor(1.0f, 0.1f, 0.1f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
@@ -63,6 +63,21 @@ update_status ModuleRender::PreUpdate()
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, static_cast<void*>(0));
 	glDrawArrays(GL_TRIANGLES, 0, 3);
+	
+	
+	/* basic struct timer
+	unsigned int lTime = 0, currentTime;
+	bool quit = false;
+
+	while (!quit) {
+		currentTime = SDL_GetTicks();
+		if (currentTime > lTime + 1000) {
+			LOG("REPORT %d\n", currentTime);
+			lTime = currentTime;
+			quit = true;
+		}
+	}
+	*/
 
 	return UPDATE_CONTINUE;
 }
@@ -76,7 +91,7 @@ update_status ModuleRender::Update()
 
 update_status ModuleRender::PostUpdate()
 {
-	//App->editor->DrawParentMenu(); /// eeeeeeeeeeeeeeeeeee
+	//App->editor->InitializeImGui(); /// eeeeeeeeeeeeeeeeeee
 	SDL_GL_SwapWindow(App->window->window);
 
 
