@@ -156,6 +156,7 @@
       <Filter>MathGeoLib</Filter>
     </ClCompile>
     <ClCompile Include="ModuleCamera.cpp" />
+    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
@@ -443,6 +444,7 @@
     <ClInclude Include="DevIL\include\IL\devil_cpp_wrapper.hpp">
       <Filter>DevIL</Filter>
     </ClInclude>
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ImGui">
