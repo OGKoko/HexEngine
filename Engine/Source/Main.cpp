@@ -18,6 +18,7 @@ enum main_states
 
 Application* App = NULL;
 
+
 int main(int argc, char ** argv)
 {
 	int main_return = EXIT_FAILURE;

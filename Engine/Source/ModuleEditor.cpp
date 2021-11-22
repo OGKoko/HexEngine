@@ -25,9 +25,12 @@ ModuleEditor::~ModuleEditor()
 // Called before render is available
 bool ModuleEditor::Init()
 {
+	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
+	
+
 	ImGui_ImplSDL2_InitForOpenGL(App->window->window, App->renderer->context);
-	ImGui_ImplOpenGL3_Init();
+	ImGui_ImplOpenGL3_Init("#version 330");
 
 	return true;
 }
@@ -36,7 +39,7 @@ update_status ModuleEditor::PreUpdate()
 {
 	//Begin new ImGui Frame
 	ImGui_ImplOpenGL3_NewFrame();
-	ImGui_ImplSDL2_NewFrame(App->window->window);
+	ImGui_ImplSDL2_NewFrame();//App->window->window
 	ImGui::NewFrame();
 	
 	return UPDATE_CONTINUE;
@@ -45,19 +48,88 @@ update_status ModuleEditor::PreUpdate()
 // Called every draw update
 update_status ModuleEditor::Update()
 {
-
+	bool widShown = true;
+	ImGuiWindowFlags windowFlags = ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_MenuBar;
+	ImGui::Begin("Editor", &widShown, windowFlags);
+	DrawParentMenu();
+	if (isAbtWin) 
+	{
+		DrawAboutMenu();
+	}
+	ImGui::Render();
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+	
     return UPDATE_CONTINUE;
 }
 
-void ModuleEditor::Draw()
+void ModuleEditor::DrawParentMenu()
 {
+	if (ImGui::BeginMainMenuBar())
+	{
+		
+		// Begin Drawing Help Menu:
+		if (ImGui::BeginMenu("Help"))
+		{
 
-	bool winShow = true;
+			if (ImGui::MenuItem("About"))
+			{
+				
+				isAbtWin = true;
+			}
+
+			
+			ImGui::EndMenu();  //fin del bloque help
+		}
+
+		// End Drawing Main Menu Bar:
+		ImGui::EndMainMenuBar();
+	}
+
+	if (ImGui::BeginMenu("Help")) //empieza el nuevo bloque Help
+	{
+
+		if (ImGui::MenuItem("About")) //creacion panel abt
+		{
+			
+			isAbtWin = true;
+		}
+
+		
+		ImGui::EndMenu(); // fin del bloque help
+	}
+
+	// End Drawing Main Menu Bar:
+	ImGui::EndMainMenuBar();
+	/*bool winShow = true;
 	ImGui::ShowDemoWindow(&winShow);
 	ImGui::Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+	ImGui::End();*/
+//}
+}
+
+void ModuleEditor::DrawAboutMenu()
+{
+
+	ImGui::Begin("About", &isAbtWin);
+
+	ImGui::AlignTextToFramePadding();
+	ImGui::TextWrapped("HexEngine");
+	ImGui::Separator();
+	ImGui::TextWrapped("Noone scapes from HexEngine magnificiency.\n");
+	ImGui::Separator();
+	ImGui::TextWrapped("\n Comissions at: eimbertupc@gmail.com or @koko.wav on IG.\n");
+
+	ImGui::TextWrapped("\n Done by: Enrique Imbert-Bouchard Nadal \n");
+	ImGui::Separator();
+
 	ImGui::End();
 }
+
+
+
+
+
 
 // Called before quitting
 bool ModuleEditor::CleanUp()

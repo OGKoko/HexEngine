@@ -419,6 +419,30 @@
       <Filter>MathGeoLib</Filter>
     </ClInclude>
     <ClInclude Include="ModuleCamera.h" />
+    <ClInclude Include="DevIL\include\IL\devil_internal_exports.h">
+      <Filter>DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\IL\il.h">
+      <Filter>DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\IL\il_wrap.h">
+      <Filter>DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\IL\ilu.h">
+      <Filter>DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\IL\ilu_region.h">
+      <Filter>DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\IL\ilut.h">
+      <Filter>DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\IL\ilut_config.h">
+      <Filter>DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\IL\devil_cpp_wrapper.hpp">
+      <Filter>DevIL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ImGui">
@@ -426,6 +450,9 @@
     </Filter>
     <Filter Include="MathGeoLib">
       <UniqueIdentifier>{c5ba8a7c-b770-4af3-b4eb-074eb9777257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DevIL">
+      <UniqueIdentifier>{d5810e6b-2c62-48a0-afe1-b306f7f1d4f7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

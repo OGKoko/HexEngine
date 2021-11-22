@@ -13,7 +13,11 @@ public:
 	update_status PreUpdate();
 	update_status Update();
 
-	void Draw();
-
+	void DrawParentMenu();
+	void DrawAboutMenu();
 	bool CleanUp();
+private:
+
+	bool isDemoWin = false;
+	bool isAbtWin = false;
 };

@@ -20,4 +20,14 @@ public:
 	void WindowResized(unsigned width, unsigned height);
 
 	void* context;
+
+private:
+	
+
+	int winWidth = SCREEN_WIDTH;
+	int winHeight = SCREEN_HEIGHT;
+
+	unsigned vbo;
+
+
 };
