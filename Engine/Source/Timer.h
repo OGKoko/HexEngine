@@ -12,8 +12,8 @@ public:
 
 	Uint32 SDL_GetTicks();
 
-	bool isStart;
-	bool isPaused;
+	bool isStart();
+	bool isPaused();
 
 private:
 	Uint32 mStartTicks; //clock time at start

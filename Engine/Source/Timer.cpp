@@ -57,3 +57,14 @@ Uint32 Timer::SDL_GetTicks()
 		}
 	return time;
 }
+
+bool Timer::isStart()
+{
+	
+	return mStarted;
+}
+
+bool Timer::isPaused()
+{
+	return mPaused && mStarted;
+}
