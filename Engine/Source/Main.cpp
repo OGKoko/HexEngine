@@ -54,7 +54,7 @@ int main(int argc, char ** argv)
 		case MAIN_UPDATE:
 		{
 			int update_return = App->Update();
-
+			
 			if (update_return == UPDATE_ERROR)
 			{
 				LOG("Application Update exits with error -----");

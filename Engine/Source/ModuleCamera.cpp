@@ -13,10 +13,12 @@ bool ModuleCamera::Init()
 	fr.SetViewPlaneDistances(0.1f, 200.0f);
 	fr.SetHorizontalFovAndAspectRatio(DEGTORAD * 90, 1.3f);
 	
+
 	fr.SetPos(float3(0.0f, 1.0f, -2.0f));
 	fr.SetFront(float3::unitZ);
 	fr.SetUp(float3::unitY);
 	
+
 	float4x4 projectionGL = fr.ProjectionMatrix().Transposed();
 	
 	glMatrixMode(GL_PROJECTION);

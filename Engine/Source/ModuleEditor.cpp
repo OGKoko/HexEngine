@@ -41,7 +41,7 @@ update_status ModuleEditor::PreUpdate()
 
 // Called every draw update
 update_status ModuleEditor::Update()
-{
+{/*
 	bool widShown = true;
 	ImGuiWindowFlags windowFlags = ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_MenuBar;
 	ImGui::Begin("Editor", &widShown, windowFlags);
@@ -52,7 +52,7 @@ update_status ModuleEditor::Update()
 	}
 	ImGui::Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
+	*/
 	return UPDATE_CONTINUE;
 }
 
@@ -121,7 +121,7 @@ void ModuleEditor::InitializeImGui()
 	ImGui_ImplOpenGL3_Init("#version 330");
 
 	ImGui_ImplOpenGL3_NewFrame();
-	ImGui_ImplSDL2_NewFrame();//App->window->window
+	ImGui_ImplSDL2_NewFrame(App->window->window);//App->window->window
 	ImGui::NewFrame();
 
 	//ImGui::End();
