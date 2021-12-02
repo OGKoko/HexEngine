@@ -16,7 +16,8 @@ bool ModuleCamera::Init()
 
 	fr.SetPos(float3(0.0f, 1.0f, -2.0f));
 	fr.SetFront(float3::unitZ);
-	fr.SetUp(float3::unitY);
+	 fr.SetUp(float3::unitY);
+	
 	
 
 	float4x4 projectionGL = fr.ProjectionMatrix().Transposed();
@@ -29,15 +30,15 @@ bool ModuleCamera::Init()
 update_status ModuleCamera::PreUpdate()
 {
 
-	return update_status();
+	return UPDATE_CONTINUE;
 }
 update_status ModuleCamera::Update()
 {
-	return update_status();
+	return UPDATE_CONTINUE;
 }
 update_status ModuleCamera::PostUpdate()
 {
-	return update_status();
+	return UPDATE_CONTINUE;
 }
 bool ModuleCamera::CleanUp()
 {

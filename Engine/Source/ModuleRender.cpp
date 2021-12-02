@@ -44,11 +44,11 @@ bool ModuleRender::Init()
 	SDL_GetWindowSize(App->window->window, &winWidth, &winHeight);
 
 	float vtx_data[] = { -1.0f, -1.0f, 0.0f, 1.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f };
-	/*
+	
 	glGenBuffers(1, &vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo); // set vbo active
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vtx_data), vtx_data, GL_STATIC_DRAW);
-*/
+
 	return true;
 }
 
@@ -57,15 +57,15 @@ update_status ModuleRender::PreUpdate()
 	glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 	glClearColor(1.0f, 0.1f, 0.1f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-/*/
+
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	glEnableVertexAttribArray(0);
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, static_cast<void*>(0));
 	glDrawArrays(GL_TRIANGLES, 0, 3);
-	*/
 	
-	/* basic struct timer
+	/*
+	// basic struct timer
 	unsigned int lTime = 0, currentTime;
 	bool quit = false;
 
@@ -76,8 +76,8 @@ update_status ModuleRender::PreUpdate()
 			lTime = currentTime;
 			quit = true;
 		}
-	}
-	*/
+	}*/
+	
 
 	return UPDATE_CONTINUE;
 }

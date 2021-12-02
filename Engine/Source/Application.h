@@ -29,7 +29,7 @@ public:
 	ModuleWindow* window = nullptr;
 	ModuleInput* input = nullptr;
 	ModuleEditor* editor = nullptr;
-	ModuleCamera* camera = nullptr;
+		ModuleCamera* camera = nullptr;
 
 private:
 
