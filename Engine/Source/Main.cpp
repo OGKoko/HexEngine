@@ -1,8 +1,7 @@
 #include <stdlib.h>
 #include "Application.h"
-#include "ModuleRender.h"
 #include "Globals.h"
-
+#include "Timer.h"
 #include "SDL/include/SDL.h"
 #pragma comment( lib, "SDL/lib/x64/SDL2.lib" )
 #pragma comment( lib, "SDL/lib/x64/SDL2main.lib" )
@@ -17,13 +16,13 @@ enum main_states
 };
 
 Application* App = NULL;
-
+Timer* TheTimer = NULL;
 
 int main(int argc, char ** argv)
 {
 	int main_return = EXIT_FAILURE;
 	main_states state = MAIN_CREATION;
-
+	TheTimer = new Timer();
 	while (state != MAIN_EXIT)
 	{
 		switch (state)

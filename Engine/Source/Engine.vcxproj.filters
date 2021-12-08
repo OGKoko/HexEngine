@@ -157,6 +157,13 @@
     </ClCompile>
     <ClCompile Include="ModuleCamera.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="DebugDraw\ModuleDebugDraw.cpp">
+      <Filter>DebugDraw</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelManager.cpp" />
+    <ClCompile Include="ModuleTexture.cpp" />
+    <ClCompile Include="ModuleModel.cpp" />
+    <ClCompile Include="ModuleShader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
@@ -676,6 +683,19 @@
     <ClInclude Include="Assimp\include\assimp\ZipArchiveIOSystem.h">
       <Filter>Assimp</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Desktop\debug_draw.hpp">
+      <Filter>DebugDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Desktop\debugdraw.h">
+      <Filter>DebugDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugDraw\ModuleDebugDraw.h">
+      <Filter>DebugDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelManager.h" />
+    <ClInclude Include="ModuleTexture.h" />
+    <ClInclude Include="ModuleModel.h" />
+    <ClInclude Include="ModuleShader.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ImGui">
@@ -689,6 +709,9 @@
     </Filter>
     <Filter Include="Assimp">
       <UniqueIdentifier>{c6cf5669-a3dd-4f0b-8e5b-75b883a192ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DebugDraw">
+      <UniqueIdentifier>{b059b9c9-7ded-434a-80ca-81dcd30c874e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

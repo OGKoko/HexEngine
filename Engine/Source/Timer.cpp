@@ -46,6 +46,25 @@ void Timer::resume()
 	}
 }
 
+float Timer::FPSCounter()
+{
+	{
+		float sum = 0.0f;
+		for (size_t i = 0; i < FPS_BUFFER; ++i)
+		{
+			sum += frameClock[i];
+		}
+
+		if (actFrame < FPS_BUFFER)
+		{
+			return 1.0f / (sum * 1000 / (float)actFrame);
+		}
+
+		return 1.0f / (sum * 1000 * (1.0f/FPS_BUFFER));
+	}
+
+}
+
 Uint32 Timer::SDL_GetTicks()
 {
 	Uint32  time = 0;
@@ -68,3 +87,14 @@ bool Timer::isPaused()
 {
 	return mPaused && mStarted;
 }
+
+float Timer::FPS() 
+{
+	return fps;
+}
+
+float Timer::getDeltaTime() 
+{
+
+	return deltaTime*(1.0f/1000.0f);
+};

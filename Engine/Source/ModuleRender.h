@@ -18,9 +18,13 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 	void WindowResized(unsigned width, unsigned height);
-
+	void InitGlew();
+	void InitPipeline();
+	void InitOpenGL();
+	void MiscLog();
 	void* context;
 
+	//inline Model* getModel() const { return model; }
 private:
 	
 

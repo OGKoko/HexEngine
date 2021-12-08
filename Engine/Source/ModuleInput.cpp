@@ -3,7 +3,7 @@
 #include "ModuleInput.h"
 #include "ModuleRender.h"
 #include "SDL/include/SDL.h"
-#include "imgui_impl_sdl.h"
+//#include "imgui_impl_sdl.h"
 
 ModuleInput::ModuleInput()
 {}
@@ -36,7 +36,7 @@ update_status ModuleInput::Update()
 
     while (SDL_PollEvent(&sdlEvent) != 0)
     {
-		ImGui_ImplSDL2_ProcessEvent(&sdlEvent);
+		//ImGui_ImplSDL2_ProcessEvent(&sdlEvent);
 
         switch (sdlEvent.type)
         {

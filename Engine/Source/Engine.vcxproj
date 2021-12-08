@@ -99,12 +99,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Assimp\include\assimp;$(SolutionDir)\DevIL\include\IL;$(SolutionDir)\imgui;$(SolutionDir)\glew\glew-2.1.0\include;.\SDL\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\MathGeoLib;$(SolutionDir)\DebugDraw;$(SolutionDir)\SDL\include;$(SolutionDir)\glew\glew-2.1.0\include;$(SolutionDir)\DevIL\include\IL;$(SolutionDir)\Assimp\include\assimp;$(SolutionDir)\imgui</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\Assimp\lib;$(SolutionDir)\DevIL\lib\x64\unicode\Release;$(SolutionDir)\SDL\lib\x64;$(SolutionDir)\glew\glew-2.1.0\lib\Release\x64;$(SolutionDir)\Game;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\DevIL\include\IL;$(SolutionDir)\Assimp\lib;$(SolutionDir)\DevIL\lib\x64\unicode\Release;$(SolutionDir)\SDL\lib\x64;$(SolutionDir)\glew\glew-2.1.0\lib\Release\x64;$(SolutionDir)\Game;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -132,19 +132,20 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Assimp\include\assimp;$(SolutionDir)\DevIL\include\IL;$(SolutionDir)\imgui;$(SolutionDir)\glew\glew-2.1.0\include;.\SDL\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\MathGeoLib;$(SolutionDir)\DebugDraw;$(SolutionDir)\SDL\include;$(SolutionDir)\glew\glew-2.1.0\include;$(SolutionDir)\DevIL\include\IL;$(SolutionDir)\Assimp\include\assimp;$(SolutionDir)\imgui</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\Assimp\lib;$(SolutionDir)\DevIL\lib\x64\unicode\Release;$(SolutionDir)\SDL\lib\x64;$(SolutionDir)\glew\glew-2.1.0\lib\Release\x64;$(SolutionDir)\Game;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\DevIL\include\IL;$(SolutionDir)\Assimp\lib;$(SolutionDir)\DevIL\lib\x64\unicode\Release;$(SolutionDir)\SDL\lib\x64;$(SolutionDir)\glew\glew-2.1.0\lib\Release\x64;$(SolutionDir)\Game;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="DebugDraw\ModuleDebugDraw.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />
@@ -196,14 +197,20 @@
     <ClCompile Include="MathGeoLib\Math\SSEMath.cpp" />
     <ClCompile Include="MathGeoLib\Math\TransformOps.cpp" />
     <ClCompile Include="MathGeoLib\Time\Clock.cpp" />
+    <ClCompile Include="ModelManager.cpp" />
     <ClCompile Include="ModuleCamera.cpp" />
     <ClCompile Include="ModuleEditor.cpp" />
     <ClCompile Include="ModuleInput.cpp" />
+    <ClCompile Include="ModuleModel.cpp" />
     <ClCompile Include="ModuleRender.cpp" />
+    <ClCompile Include="ModuleShader.cpp" />
+    <ClCompile Include="ModuleTexture.cpp" />
     <ClCompile Include="ModuleWindow.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\Desktop\debugdraw.h" />
+    <ClInclude Include="..\..\..\..\..\..\Desktop\debug_draw.hpp" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="Assimp\include\assimp\aabb.h" />
     <ClInclude Include="Assimp\include\assimp\ai_assert.h" />
@@ -282,6 +289,7 @@
     <ClInclude Include="Assimp\include\assimp\Vertex.h" />
     <ClInclude Include="Assimp\include\assimp\XMLTools.h" />
     <ClInclude Include="Assimp\include\assimp\ZipArchiveIOSystem.h" />
+    <ClInclude Include="DebugDraw\ModuleDebugDraw.h" />
     <ClInclude Include="DevIL\include\IL\devil_cpp_wrapper.hpp" />
     <ClInclude Include="DevIL\include\IL\devil_internal_exports.h" />
     <ClInclude Include="DevIL\include\IL\il.h" />
@@ -376,11 +384,15 @@
     <ClInclude Include="MathGeoLib\Math\TransformOps.h" />
     <ClInclude Include="MathGeoLib\Math\vec2d.h" />
     <ClInclude Include="MathGeoLib\Time\Clock.h" />
+    <ClInclude Include="ModelManager.h" />
     <ClInclude Include="Module.h" />
     <ClInclude Include="ModuleCamera.h" />
     <ClInclude Include="ModuleEditor.h" />
     <ClInclude Include="ModuleInput.h" />
+    <ClInclude Include="ModuleModel.h" />
     <ClInclude Include="ModuleRender.h" />
+    <ClInclude Include="ModuleShader.h" />
+    <ClInclude Include="ModuleTexture.h" />
     <ClInclude Include="ModuleWindow.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
