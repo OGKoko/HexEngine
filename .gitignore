@@ -372,3 +372,4 @@ MigrationBackup/
 !Source/DevIL/lib/x86/Release/*
 !Source/DevIL/lib/x86/unicode/*
 !Source/Assimp/*
+!Source/DebugDraw/*
