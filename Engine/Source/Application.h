@@ -12,7 +12,7 @@ class ModelManager;
 class ModuleCamera;
 class ModuleDebugDraw;
 class ModuleTexture;
-//class ModuleShader;
+class ModuleShader;
 
 class Application
 {
@@ -29,15 +29,14 @@ public:
 	ModuleRender* renderer = nullptr;
 	ModuleWindow* window = nullptr;
 	ModuleInput* input = nullptr;
-	//ModuleShader* shader = nullptr;
+	ModuleShader* shader = nullptr;
 	ModuleCamera* camera = nullptr;
 	ModelManager* model = nullptr;
 	ModuleDebugDraw* debugDraw = nullptr;
 	ModuleTexture* textures = nullptr;
-
 	ModuleEditor* editor = nullptr;
-private:
 
+private:
 	std::list<Module*> modules;
 
 };
