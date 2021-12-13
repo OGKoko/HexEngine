@@ -14,10 +14,10 @@ public:
 	update_status PreUpdate();
 	update_status Update();
 
-	/*void DrawParentMenu();
+	void DrawParentMenu();
 	void DrawAboutMenu();
 	void InitializeImGui();
-	void DrawFPSMenu();*/
+	void DrawFPSMenu();
 	bool CleanUp();
 
 private:

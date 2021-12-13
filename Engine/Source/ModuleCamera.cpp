@@ -74,6 +74,11 @@ bool ModuleCamera::CleanUp()
 	return true;
 }
 
+float4x4 ModuleCamera::ViewMatrix()
+{
+	return float4x4();
+}
+
 void ModuleCamera::CamManager()
 {
 

@@ -8,6 +8,7 @@ class ModuleRender;
 class ModuleWindow;
 class ModuleInput;
 class ModuleEditor;
+class ModelManager;
 class ModuleCamera;
 class ModuleDebugDraw;
 class ModuleTexture;
@@ -30,6 +31,7 @@ public:
 	ModuleInput* input = nullptr;
 	//ModuleShader* shader = nullptr;
 	ModuleCamera* camera = nullptr;
+	ModelManager* model = nullptr;
 	ModuleDebugDraw* debugDraw = nullptr;
 	ModuleTexture* textures = nullptr;
 

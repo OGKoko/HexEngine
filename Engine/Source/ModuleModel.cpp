@@ -9,10 +9,20 @@
 #include "ilu.h"
 
 void ModuleModel::Draw()
-{/*
+{
 	if(isFBXLoaded)
 		for (ModelManager& mesh : meshes)
 		{
 			mesh.Draw(textures);
-		}*/
+		}
 }
+
+void ModuleModel::LoadTextures(const aiScene* scene)
+{
+}
+
+void ModuleModel::LoadMesh(const aiScene* scene)
+{
+}
+
+

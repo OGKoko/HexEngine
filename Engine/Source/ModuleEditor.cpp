@@ -6,9 +6,9 @@
 #include "Timer.h"
 #include "SDL.h"
 #include "Timer.h"
-/*#include "imgui.h"
+#include "imgui.h"
 #include "imgui_impl_opengl3.h"
-#include "imgui_impl_sdl.h"*/
+#include "imgui_impl_sdl.h"
 
 
 ModuleEditor::ModuleEditor()
@@ -25,7 +25,7 @@ ModuleEditor::~ModuleEditor()
 // Called before render is available
 bool ModuleEditor::Init()
 {
-	//InitializeImGui();
+	InitializeImGui();
 	//fpsList.reserve(FPS_BUFFER);
 	//clockList.reserve(FPS_BUFFER);
 
@@ -33,18 +33,18 @@ bool ModuleEditor::Init()
 }
 
 update_status ModuleEditor::PreUpdate()
-{/*
-	//Begin new ImGui Frame
+{
+	
 	ImGui_ImplOpenGL3_NewFrame();
-	ImGui_ImplSDL2_NewFrame();//App->window->window
+	ImGui_ImplSDL2_NewFrame();
 	ImGui::NewFrame();
-	*/
+	
 	return UPDATE_CONTINUE;
 }
 
 // Called every draw update
 update_status ModuleEditor::Update()
-{/*
+{
 	bool widShown = true;
 	ImGuiWindowFlags windowFlags = ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_MenuBar;
 	ImGui::Begin("Editor", &widShown, windowFlags);
@@ -55,13 +55,14 @@ update_status ModuleEditor::Update()
 	}
 	ImGui::Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-	//ImGui::End();*/
+	//ImGui::End();
 
 	return UPDATE_CONTINUE;
 }
-/*
+
+
 void ModuleEditor::DrawParentMenu()
-{
+{/*
 	if (ImGui::BeginMainMenuBar())
 	{
 		if (ImGui::BeginMenu("Tools"))
@@ -84,19 +85,19 @@ void ModuleEditor::DrawParentMenu()
 		}
 
 		ImGui::EndMainMenuBar();
-	}/*
-	ImGui::EndMainMenuBar();*/
+	}*/
+	//ImGui::EndMainMenuBar();
 	// End Drawing Main Menu Bar:
-	/*bool winShow = true;
+	bool winShow = true;
 	ImGui::ShowDemoWindow(&winShow);
 	ImGui::Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-	;
-	//}
-	ImGui::End();
+	
+	
 }
 
-*/
+
+
 /*
 void ModuleEditor::DrawAboutMenu()
 {
@@ -122,7 +123,7 @@ void ModuleEditor::DrawAboutMenu()
 	ImGui::End();
 }
 */
-/*
+
 void ModuleEditor::InitializeImGui()
 {
 
@@ -138,7 +139,7 @@ void ModuleEditor::InitializeImGui()
 	ImGui::NewFrame();
 
 	//ImGui::End();
-}*/
+}
 /*
 void ModuleEditor::DrawFPSMenu()
 {
@@ -164,12 +165,12 @@ void ModuleEditor::DrawFPSMenu()
 
 // Called before quitting
 bool ModuleEditor::CleanUp()
-{/*
+{
 	ImGui_ImplOpenGL3_Shutdown();
 	ImGui_ImplSDL2_Shutdown();
 	ImGui::DestroyContext();
-	ImGui::End();
+	//ImGui::End();
 
- */
+ 
 	return true;
 }

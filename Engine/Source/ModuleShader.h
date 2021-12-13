@@ -14,13 +14,13 @@ public:
 
 	bool Init();
 
-	//unsigned GetId() { return glId; };
+	unsigned GetId() { return glId; };
 
 	bool CleanUp();
 private:
-	unsigned glId; //unsigned == unsigned int
-	//char* ShaderLoader(const char* shader_path);
-	//unsigned ShaderCompiler(const char* source, unsigned type);
-	//unsigned Assembly(unsigned vtxShader, unsigned fragment_shader);
+	unsigned glId; 
+	char* ShaderLoader(const char* shader_path);
+	unsigned ShaderCompiler(const char* source, unsigned type);
+	unsigned Assembly(unsigned vtxShader, unsigned fragment_shader);
 };
 

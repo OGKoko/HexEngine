@@ -32,7 +32,7 @@ void ModelManager::LoadMesh(const aiMesh* fbx)
 	isLoaded = true;
 
 }
-/*
+
 void ModelManager::Draw(const std::vector<Texture>& modelTextures)
 {
 	if (isLoaded) {
@@ -60,7 +60,7 @@ void ModelManager::Draw(const std::vector<Texture>& modelTextures)
 	}
 
 }
-*/
+
 
 void ModelManager::LoadVBO(const aiMesh* fbx)
 {

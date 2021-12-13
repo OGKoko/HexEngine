@@ -16,14 +16,14 @@ public:
 	bool Init();
 	bool CleanUp();
 
-/*
+
 	Texture TextureLoader(const char* filePath);
 	void TextLinker(unsigned id, unsigned GLindx = GL_TEXTURE0);
 	void TextDetacher(unsigned GLindx = GL_TEXTURE0);
 	unsigned GetTexture(Texture* texture) { return texture->id; }
 private:
 	unsigned int LoadImg(const char* path);
-	*/
+	
 };
 
 

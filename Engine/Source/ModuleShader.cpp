@@ -10,7 +10,7 @@ ModuleShader::~ModuleShader()
 
 bool ModuleShader::Init()
 {
-	/*
+	
 	unsigned int fragmentShaderID = ShaderCompiler(ShaderLoader("fragment.glsl"), GL_FRAGMENT_SHADER);
 
 	glId = Assembly(vtxShaderID, fragmentShaderID);
@@ -19,36 +19,46 @@ bool ModuleShader::Init()
 	glDeleteShader(vtxShaderID);
 	glDeleteShader(fragmentShaderID);
 	unsigned int vtxShaderID = ShaderCompiler(ShaderLoader("vertex.glsl"), GL_VERTEX_SHADER);
-	*/
+	
 
 	return true;
 }
 
 bool ModuleShader::CleanUp()
 {
-	//glDeleteProgram(glId);
+	glDeleteProgram(glId);
 	return true;
 }
 
-	/*
+char* ModuleShader::ShaderLoader(const char* shader_path)
+{
+	return nullptr;
+}
+
+unsigned ModuleShader::ShaderCompiler(const char* source, unsigned type)
+{
+	return 0;
+}
+
+	
 char* ModuleShader::ShaderLoader(const char* shaderPath)
 {
 	char* data = nullptr;
 	FILE* file = nullptr;
 	fopen_s(&file, shaderPath, "rb");
 	
-		fseek(file, 0, SEEK_END); //point to the end of the file with offset 0
+		fseek(file, 0, SEEK_END); 
 		int size = ftell(file);
-		data = (char*)malloc(size + 1); //allocate memory for file
-		fseek(file, 0, SEEK_SET); // point to the start of the file with ofsset 0
-		fread(data, 1, size, file); // read the file and write it on data variable
-		data[size] = 0; //set the end of the data to 0 so we know where it ends
+		data = (char*)malloc(size + 1); 
+		fseek(file, 0, SEEK_SET); 
+		fread(data, 1, size, file);
+		data[size] = 0; 
 		fclose(file);
 	
 	return data;
 }
-	*/
-/*
+	
+
 unsigned ModuleShader::ShaderCompiler(const char* source, unsigned type)
 {
 	unsigned shaderId = glCreateShader(type);
@@ -71,7 +81,7 @@ unsigned ModuleShader::ShaderCompiler(const char* source, unsigned type)
 	return shaderId;
 }
 
-*//*
+
 unsigned ModuleShader::Assembly(unsigned vtxShader, unsigned fragShader)
 {
 	unsigned id = glCreateProgram();
@@ -96,4 +106,4 @@ unsigned ModuleShader::Assembly(unsigned vtxShader, unsigned fragShader)
 	glDeleteShader(fragShader);
 	return id;
 }
-*/
+

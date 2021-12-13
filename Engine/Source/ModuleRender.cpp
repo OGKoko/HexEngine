@@ -37,7 +37,7 @@ bool ModuleRender::Init()
 }
 
 update_status ModuleRender::PreUpdate()
-{/*
+{
 	glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -46,7 +46,7 @@ update_status ModuleRender::PreUpdate()
 	glEnableVertexAttribArray(0);
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, static_cast<void*>(0));
-	glDrawArrays(GL_TRIANGLES, 0, 3);*/
+	glDrawArrays(GL_TRIANGLES, 0, 3);
 	
 	/*
 	// basic struct timer

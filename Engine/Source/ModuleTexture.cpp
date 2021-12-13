@@ -10,19 +10,19 @@ ModuleTexture::~ModuleTexture()
 
 bool ModuleTexture::Init()
 {
-	//ilInit();
+	ilInit();
 	return false;
 }
 
 bool ModuleTexture::CleanUp()
 {
-	//ilShutDown();
+	ilShutDown();
 	return true;
 }
 
 
 
-/*
+
 Texture ModuleTexture::TextureLoader(const char* filePath){
 	Texture tmpText;
 	unsigned textureID = LoadImg(filePath);
@@ -45,9 +45,10 @@ Texture ModuleTexture::TextureLoader(const char* filePath){
 	
 
 }
-*/
+
+
 	
-/*
+
 void ModuleTexture::TextLinker(unsigned id, unsigned GLindx)
 {
 	glEnable(GL_TEXTURE_2D);
@@ -76,4 +77,4 @@ unsigned int ModuleTexture::LoadImg(const char* path)
 	return _textureID;
 
 }
-*/
+
